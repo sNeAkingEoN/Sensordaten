@@ -37,7 +37,7 @@ def transform_data(df):
 def write_to_file(df):
     ''' write DataFrame to CSV file in directory chosen by the user '''
     filename = askdirectory()
-    outfile_name = "sensordata_transformed_{}.csv".format(datetime.now().date())
+    outfile_name = filename + "sensordata_transformed_{}.csv".format(datetime.now().date())
     outstring = df.to_csv(index=False, sep=';')
     with open(outfile_name, 'w') as outfile:
         outfile.write(outstring)
